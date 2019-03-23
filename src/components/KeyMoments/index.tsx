@@ -1,24 +1,40 @@
 import React, {Component} from "react";
-import {View, Text, StyleSheet, TouchableOpacity} from "react-native";
+import {View, Text, StyleSheet, TouchableOpacity, FlatList} from "react-native";
 import Icon from "react-native-vector-icons/Ionicons"
 import {mediumGap, smallGap} from "../../constants"
+import KMomentItem from "../KeyMomentsItem"
 
+//@Types
+import {KmomentsData} from "../../commonTypes"
+import KeyMomentsItem from "../KeyMomentsItem";
 
 interface IState {
   show: boolean
 }
-interface Data {
-  id: number
-  keyMoment: string
-}
+
 
 interface IProps {
-  data: Data[]
+  data: KmomentsData[]
 }
 export default class KeyMoments extends Component <IProps, IState> {
   state = {
-    show: true
+    show: false
   };
+
+
+  renderContent = (shouldShow: boolean) => {
+    const {data} = this.props;
+    if (shouldShow){
+      return <FlatList
+        data={data}
+        keyExtractor={(item) => item.id}
+        renderItem={({item}) => <KeyMomentsItem id={item.id} keyMoment={item.keyMoment}/> }
+      />
+    }
+    return null
+  };
+
+
   handleOpen = (): void => {
     this.setState(({show}) => ({show: !show}))
   };
@@ -26,10 +42,17 @@ export default class KeyMoments extends Component <IProps, IState> {
     const {show} = this.state;
     return(
       <View style={styles.container}>
-        <Text style={styles.text}>Key Moments</Text>
-        <TouchableOpacity onPress={this.handleOpen} style={styles.arrow}>
-          <Icon name={show ? "ios-arrow-dropup" : "ios-arrow-dropdown"} size={38}/>
-        </TouchableOpacity>
+        <View
+          style={[styles.titleContainer, show ? {marginBottom: mediumGap} : null]}>
+          <Text style={styles.text}>Key Moments</Text>
+          <TouchableOpacity onPress={this.handleOpen} style={styles.arrow}>
+            <Icon name={!show ? "ios-arrow-dropup" : "ios-arrow-dropdown"} size={38}/>
+          </TouchableOpacity>
+        </View>
+        <View>
+          {this.renderContent(show)}
+        </View>
+
       </View>
     )
   }
@@ -37,7 +60,6 @@ export default class KeyMoments extends Component <IProps, IState> {
 
 const styles = StyleSheet.create({
   container:{
-    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     width: '100%',
@@ -48,11 +70,19 @@ const styles = StyleSheet.create({
   },
   arrow: {
     position: "absolute",
-    right: mediumGap
+    right: smallGap,
   },
   text: {
     fontSize: 20,
-    fontWeight: "bold"
+    fontWeight: "bold",
+
+  },
+  titleContainer: {
+    flexDirection: "row",
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+
   }
 });
 
