@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View} from "react-native"
 import createStore,{reducers, rootSaga} from "./src/Redux"
 import {Provider} from "react-redux"
-import KeyMoments from "./src/components/KeyMoments"
+import KeyMoments from "./src/components/KeyMoments";
+import Commentery from "./src/components/Commentery"
 const store = createStore(reducers, rootSaga);
+import {pageWidth} from "./src/constants"
 interface Props {}
 
 const data = [
@@ -48,7 +50,7 @@ const data = [
   },
   {
     "id": "7",
-    "comment": "All those beauties will be lost in advices like energies in modifications",
+    "comment": "All those beauties will be lost in advices like energies in modifications,All those beauties will be lost in advices like energies in modifications,All those beauties will be lost in advices like energies in modifications,All those beauties will be lost in advices like energies in modifications",
     "keyMoment": "energies",
     "avatar": "https://api.adorable.io/avatars/285/7"
   },
@@ -64,7 +66,48 @@ const data = [
     "keyMoment": "unusual moons",
     "avatar": "https://api.adorable.io/avatars/285/9"
 
-  }
+  },
+  {
+    "id": "10",
+    "comment": "All the suns fight sub-light, boldly lieutenant commanders.",
+    "keyMoment": "sub-light",
+    "avatar": "https://api.adorable.io/avatars/285/4"
+  },
+  {
+    "id": "11",
+    "comment": "Seismic, spheroid moons virtually love an ordinary, huge astronaut.",
+    "keyMoment": "astronaut",
+    "avatar": "https://api.adorable.io/avatars/285/5"
+
+  },
+  {
+    "id": "12",
+    "comment": "Warp oddly like a sub-light queen.",
+    "keyMoment": "sub-light queen",
+    "avatar": "https://api.adorable.io/avatars/285/6"
+
+  },
+  {
+    "id": "13",
+    "comment": "All those beauties will be lost in advices like energies in modifications,All those beauties will be lost in advices like energies in modifications,All those beauties will be lost in advices like energies in modifications,All those beauties will be lost in advices like energies in modifications",
+    "keyMoment": "energies",
+    "avatar": "https://api.adorable.io/avatars/285/7"
+  },
+  {
+    "id": "14",
+    "comment": "Space suits meet with assimilation at the colorful wormhole!",
+    "keyMoment": "wormhole",
+    "avatar": "https://api.adorable.io/avatars/285/8"
+  },
+  {
+    "id": "15",
+    "comment": "Most unusual moons lead to the honor.",
+    "keyMoment": "unusual moons",
+    "avatar": "https://api.adorable.io/avatars/285/9",
+    "last": true
+
+  },
+
 ];
 
 export default class App extends Component<Props> {
@@ -72,7 +115,10 @@ export default class App extends Component<Props> {
     const {container} = styles
     return (
       <Provider store={store}>
+
         <View style={container}>
+          <Text style={{fontSize: 18, fontWeight: "bold", paddingLeft: 20}}>Live Commentery</Text>
+          <Commentery data={data}/>
           <KeyMoments data={data} />
         </View>
       </Provider>
@@ -83,8 +129,7 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    paddingTop: 60,
   },
 });

@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
     padding: mediumGap ,
     position: "absolute",
     bottom: 0,
+    zIndex: 1
   },
   arrow: {
     height: 30,

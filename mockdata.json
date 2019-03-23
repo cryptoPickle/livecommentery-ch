@@ -55,7 +55,8 @@
       "id": "9",
       "comment": "Most unusual moons lead to the honor.",
       "keyMoment": "unusual moons",
-      "avatar": "https://api.adorable.io/avatars/285/9"
+      "avatar": "https://api.adorable.io/avatars/285/9",
+      "last": true
 
     }
   ]
