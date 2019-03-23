@@ -13,7 +13,7 @@ export default class App extends Component<Props> {
     return (
       <Provider store={store}>
         <View style={container}>
-          <KeyMoments data={[{id: 1, keyMoment: "test"}]} />
+          <KeyMoments data={[{id: "1", keyMoment: "asdsadsa"},{id: "1", keyMoment: "dasdadas"},{id: "1", keyMoment: "tedasdsafast"},{id: "1", keyMoment: "asdsadsa"},{id: "1", keyMoment: "dasdadas"},{id: "1", keyMoment: "tedasdsafast"},{id: "1", keyMoment: "test"},{id: "1", keyMoment: "test"},{id: "1", keyMoment: "test"},{id: "1", keyMoment: "test"},{id: "1", keyMoment: "test"}]} />
         </View>
       </Provider>
     );

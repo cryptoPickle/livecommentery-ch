@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {View, Text, StyleSheet, TouchableOpacity, FlatList} from "react-native";
 import Icon from "react-native-vector-icons/Ionicons"
-import {mediumGap, smallGap} from "../../constants"
+import {largeGap, mediumGap, smallGap} from "../../constants"
 import KMomentItem from "../KeyMomentsItem"
 
 //@Types
@@ -27,6 +27,7 @@ export default class KeyMoments extends Component <IProps, IState> {
     if (shouldShow){
       return <FlatList
         data={data}
+        style={{width: "100%", height: largeGap * 3}}
         keyExtractor={(item) => item.id}
         renderItem={({item}) => <KeyMomentsItem id={item.id} keyMoment={item.keyMoment}/> }
       />
@@ -49,7 +50,7 @@ export default class KeyMoments extends Component <IProps, IState> {
             <Icon name={!show ? "ios-arrow-dropup" : "ios-arrow-dropdown"} size={38}/>
           </TouchableOpacity>
         </View>
-        <View>
+        <View style={styles.keyMoments}>
           {this.renderContent(show)}
         </View>
 
@@ -82,7 +83,11 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-
+  },
+  keyMoments: {
+    width: "100%",
+    justifyContent: "flex-start",
+    marginLeft: smallGap
   }
 });
 
