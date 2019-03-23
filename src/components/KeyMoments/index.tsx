@@ -22,7 +22,7 @@ export default class KeyMoments extends Component <IProps, IState> {
   };
 
 
-  renderContent = (shouldShow: boolean) => {
+  renderContent = (shouldShow: boolean): React.ReactNode => {
     const {data} = this.props;
     if (shouldShow){
       return <FlatList
