@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KeyMomentsItem should match snapshot 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[MockFunction]}
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "marginBottom": 37.5,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderRadius": 45,
+        "marginRight": 65,
+        "overflow": "hidden",
+        "width": 45,
+      }
+    }
+  >
+    <Component
+      source={
+        Object {
+          "uri": "https://api.adorable.io/avatars/285/2",
+        }
+      }
+      style={
+        Object {
+          "height": 45,
+          "width": 45,
+        }
+      }
+    />
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#9E9E9E",
+        "fontSize": 37.5,
+      }
+    }
+  >
+    Key Moment
+  </Text>
+</TouchableOpacity>
+`;

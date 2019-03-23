@@ -30,7 +30,7 @@ export default class KeyMoments extends Component <IProps, IState> {
         style={{width: "100%", height: largeGap * 5}}
         keyExtractor={(item) => item.id}
         renderItem={({item}) =>
-          <KeyMomentsItem id={item.id} keyMoment={item.keyMoment} avatar={item.avatar}/> }
+          <KeyMomentsItem id={item.id} keyMoment={item.keyMoment} avatar={item.avatar} callback={() => {}}/> }
       />
     }
     return null
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     borderRadius: 20
   },
   text: {
-    fontSize: 18,
+    fontSize: mediumGap,
     fontWeight: "bold",
 
   },
