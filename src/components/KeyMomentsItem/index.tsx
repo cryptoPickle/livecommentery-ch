@@ -1,14 +1,16 @@
 import React from "react"
-import {View, Text, StyleSheet, TouchableOpacity} from "react-native"
+import {View, Image, Text, StyleSheet, TouchableOpacity} from "react-native"
 import {KmomentsData} from "../../commonTypes"
-import {smallGap} from "../../constants";
+import {largeGap, mediumGap, smallGap} from "../../constants";
 
 
 const KeyMomentsItem = (props: KmomentsData) => {
-  const {id, keyMoment} = props;
+  const {id, keyMoment, avatar} = props;
   return (
     <TouchableOpacity style={styles.items} >
-          <Text style={styles.fontId}>{id}</Text>
+        <View style={styles.avatarContainer}>
+          <Image source={{uri: avatar}} style={styles.avatar}/>
+        </View>
           <Text style={styles.fontMoment}>{keyMoment}</Text>
     </TouchableOpacity>
   )
@@ -17,16 +19,22 @@ const KeyMomentsItem = (props: KmomentsData) => {
 const styles = StyleSheet.create({
   items: {
     flexDirection: "row",
-    marginBottom: smallGap
+    marginBottom: mediumGap,
+    alignItems: "center",
   },
   fontMoment: {
     fontSize: 20,
   },
-  fontId: {
-    fontSize: 20,
-    fontWeight: "bold",
-    marginRight: smallGap,
+  avatar: {
+    width: 45,
+    height: 45,
   },
+  avatarContainer: {
+    overflow: "hidden",
+    borderRadius: 45,
+    width: 45,
+    marginRight: largeGap - 10,
+  }
 });
 
 export default  KeyMomentsItem

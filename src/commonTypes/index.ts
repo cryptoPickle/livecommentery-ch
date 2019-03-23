@@ -1,4 +1,5 @@
 export interface KmomentsData {
   id: string
-  keyMoment: string
+  keyMoment: string,
+  avatar: string
 }

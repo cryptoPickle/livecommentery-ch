@@ -27,9 +27,10 @@ export default class KeyMoments extends Component <IProps, IState> {
     if (shouldShow){
       return <FlatList
         data={data}
-        style={{width: "100%", height: largeGap * 3}}
+        style={{width: "100%", height: largeGap * 5}}
         keyExtractor={(item) => item.id}
-        renderItem={({item}) => <KeyMomentsItem id={item.id} keyMoment={item.keyMoment}/> }
+        renderItem={({item}) =>
+          <KeyMomentsItem id={item.id} keyMoment={item.keyMoment} avatar={item.avatar}/> }
       />
     }
     return null
@@ -47,7 +48,7 @@ export default class KeyMoments extends Component <IProps, IState> {
           style={[styles.titleContainer, show ? {marginBottom: mediumGap} : null]}>
           <Text style={styles.text}>Key Moments</Text>
           <TouchableOpacity onPress={this.handleOpen} style={styles.arrow}>
-            <Icon name={!show ? "ios-arrow-dropup" : "ios-arrow-dropdown"} size={38}/>
+            <Icon name={!show ? "ios-arrow-up" : "ios-arrow-down"} size={25} color="#757575"/>
           </TouchableOpacity>
         </View>
         <View style={styles.keyMoments}>
@@ -64,24 +65,28 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: '100%',
-    backgroundColor: "red",
+    backgroundColor: "#EEEEEE",
     padding: mediumGap ,
     position: "absolute",
     bottom: 0,
   },
   arrow: {
-    position: "absolute",
-    right: smallGap,
+    height: 30,
+    width: 30,
+    backgroundColor: "#E0E0E0",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 20
   },
   text: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: "bold",
 
   },
   titleContainer: {
     flexDirection: "row",
     width: "100%",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
   },
   keyMoments: {
