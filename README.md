@@ -13,7 +13,8 @@ To be able to run application:
 
 ### How it looks?
 
-![App](./assets/livecommentery.gif =500x)
+
+<img src="./assets/livecommentery.gif" alt="drawing" style="width:300px;"/>
 
 
 ### Used Dependencies
