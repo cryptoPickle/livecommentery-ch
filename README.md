@@ -11,6 +11,11 @@ To be able to run application:
     - starts json-server
     - runs application on ios
 
+### How it looks?
+
+![App](./assets/livecommentery.gif)
+
+
 ### Used Dependencies
 - [Axios](https://github.com/axios/axios) is http client. It is pretty straight forward and has
 handy implementations like interceptors. I have used for very simple purpose for get request. 
