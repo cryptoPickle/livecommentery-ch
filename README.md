@@ -13,7 +13,7 @@ To be able to run application:
 
 ### How it looks?
 ![minipic](./assets/livecommentery.gif){:width="300px"}
-}
+
 
 ### Used Dependencies
 - [Axios](https://github.com/axios/axios) is http client. It is pretty straight forward and has
