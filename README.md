@@ -12,7 +12,7 @@ To be able to run application:
     - runs application on ios
 
 ### How it looks?
-![minipic](./assets/livecommentery.gif){:width="300px"}
+![minipic](./assets/livecommentery.gif)
 
 
 ### Used Dependencies
