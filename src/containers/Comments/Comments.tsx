@@ -21,16 +21,23 @@ interface Props {
   error?: string
 }
 
+
+
 interface IState {
   reRender: boolean,
-  selectedId: number
+  selectedId: number,
+
 }
 
 class Comments extends Component<Props, IState> {
   state = {
     reRender: false,
-    selectedId: 0
+    selectedId: 0,
+
   };
+
+
+
 
   componentDidMount(): void {
     this.props.fetch()

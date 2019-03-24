@@ -11,7 +11,7 @@ interface Props {
 }
 
 const Comment = (props: Props) => {
-  const {isActive, isLast} = props
+  const {isActive, isLast} = props;
   return(
     <View style={styles.container}>
       <View style={[isActive ? styles.borderActive : styles.border]}>

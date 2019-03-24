@@ -36,15 +36,14 @@ class Commentery extends Component <IProps> {
   }
 
   render() {
-    console.log(this.props.data)
-    const {data} = this.props;
+    const {data, selectedId} = this.props;
     return (
       <View style={{width: "100%", height: "90%", padding: 20,  zIndex: -1}}>
         <FlatList
           data={data}
           ref={(ref) => this.flatListRef = ref}
           keyExtractor={(item) => `${item.id}`}
-          renderItem={({item}) => <Comment avatar={item.avatar} id={item.id} comment={item.comment} isActive={false} isLast={item.last}/>}
+          renderItem={({item}) => <Comment avatar={item.avatar} id={item.id} comment={item.comment}  isActive={selectedId === parseInt(item.id)} isLast={item.last}/>}
         />
       </View>
     )
