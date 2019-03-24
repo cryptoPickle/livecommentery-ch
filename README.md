@@ -12,10 +12,12 @@ To be able to run application:
     - runs application on ios
 
 ### How it looks?
+![minipic](./assets/livecommentery.gif)
 
-
-<img src="./assets/livecommentery.gif" alt="drawing" style="width:200px;"/>
-
+img[alt="minipic"] { 
+  max-width:  20px; 
+  display: block;
+}
 
 ### Used Dependencies
 - [Axios](https://github.com/axios/axios) is http client. It is pretty straight forward and has
