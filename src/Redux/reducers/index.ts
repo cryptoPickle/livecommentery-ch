@@ -1,5 +1,5 @@
 import {combineReducers} from "redux";
-
+import {fetchReducer} from "../../containers/Comments/redux/reducer"
 export const reducers = combineReducers({
-  initial: () => ({})
+  comments: fetchReducer
 });

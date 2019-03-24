@@ -1,21 +1,21 @@
-import React, {Component} from "react";
-import Commentery from "../../components/Commentery"
-import KeyMoments from "../../components/KeyMoments"
-import {connect} from "react-redux"
+import {connect} from "react-redux";
+import Comments from "./Comments"
+import {fetch} from "./redux/actions"
 
-class Comments extends Component {
-  componentDidMount(): void {
 
+// I like to keep separate my data and component layer, this way,
+//if i need to use this container later on i can use it without
+//worriying about redux.
+
+const mapDispatchToProps = (dispatch: any ) => ({
+  fetch() {
+    dispatch(fetch.request())
   }
+});
 
-  render(): React.ReactNode {
-    return (
-      <View>
-        <Commentery data={}/>
-        <KeyMoments data={}/>
-      </View>
-    )
+const mapStateToProps = ({comments}: any) => {
+  return {
+    comments
   }
-}
-
-export default connect(null,null)(Comments)
+};
+export default connect(mapStateToProps,mapDispatchToProps)(Comments)

@@ -3,17 +3,17 @@ import {View, Image, Text, StyleSheet, TouchableOpacity} from "react-native"
 import {largeGap, mediumGap, smallGap} from "../../constants";
 
 export interface KmomentsData {
-  id: string
+  id: number
   keyMoment: string,
   avatar: string
-  callback: () => void
+  callback: (id: number) => void
 }
 
 
 const KeyMomentsItem = (props: KmomentsData) => {
-  const {keyMoment, avatar, callback} = props;
+  const {keyMoment, avatar, callback, id} = props;
   return (
-    <TouchableOpacity style={styles.items} onPress={callback} >
+    <TouchableOpacity style={styles.items} onPress={() => callback(id)} >
         <View style={styles.avatarContainer}>
           <Image source={{uri: avatar}} style={styles.avatar}/>
         </View>

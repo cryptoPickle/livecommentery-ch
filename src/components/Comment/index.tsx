@@ -4,7 +4,7 @@ import {mediumGap} from "../../constants";
 
 interface Props {
   avatar: string,
-  id: string,
+  id: number,
   comment: string,
   isActive: boolean,
   isLast?: boolean

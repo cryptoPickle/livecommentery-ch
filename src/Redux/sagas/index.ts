@@ -1,5 +1,9 @@
 import {all, fork, AllEffect} from "redux-saga/effects";
+import {rootFetch} from "../../containers/Comments/redux/saga"
 
-export function *rootSaga <T> (): IterableIterator<AllEffect<T>> {
-  yield all([])
-}
+
+export function *rootSaga () {
+  yield all([
+    fork(rootFetch)
+  ])
+};

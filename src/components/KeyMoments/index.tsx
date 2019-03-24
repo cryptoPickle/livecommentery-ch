@@ -9,28 +9,35 @@ import {KmomentsData} from "../../commonTypes"
 import KeyMomentsItem from "../KeyMomentsItem";
 
 interface IState {
-  show: boolean
+  show: boolean,
 }
 
 
 interface IProps {
-  data: KmomentsData[]
+  data: KmomentsData[],
+  selectedId: (id:number) => void
 }
 export default class KeyMoments extends Component <IProps, IState> {
+  flatListRef: any;
+
   state = {
-    show: false
+    show: false,
   };
 
 
+  handleSelected = (id: number) => {
+    this.props.selectedId(id)
+  };
   renderContent = (shouldShow: boolean): React.ReactNode => {
     const {data} = this.props;
     if (shouldShow){
       return <FlatList
         data={data}
         style={{width: "100%", height: largeGap * 5}}
-        keyExtractor={(item) => item.id}
+        ref={(ref) => this.flatListRef = ref}
+        keyExtractor={(item) => `${item.id}`}
         renderItem={({item}) =>
-          <KeyMomentsItem id={item.id} keyMoment={item.keyMoment} avatar={item.avatar} callback={() => {}}/> }
+          <KeyMomentsItem id={item.id} keyMoment={item.keyMoment} avatar={item.avatar} callback={(id: number) => this.handleSelected(id)}/> }
       />
     }
     return null

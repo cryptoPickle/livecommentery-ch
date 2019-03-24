@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View} from "react-native"
 import createStore,{reducers, rootSaga} from "./src/Redux"
 import {Provider} from "react-redux"
-import KeyMoments from "./src/components/KeyMoments";
-import Commentery from "./src/components/Commentery"
+import Comments from "./src/containers/Comments"
 const store = createStore(reducers, rootSaga);
 import {pageWidth} from "./src/constants"
 interface Props {}
@@ -118,8 +117,7 @@ export default class App extends Component<Props> {
 
         <View style={container}>
           <Text style={{fontSize: 18, fontWeight: "bold", paddingLeft: 20}}>Live Commentery</Text>
-          <Commentery data={data}/>
-          <KeyMoments data={data} />
+          <Comments />
         </View>
       </Provider>
     );

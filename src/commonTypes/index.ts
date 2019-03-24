@@ -1,10 +1,10 @@
 export interface KmomentsData {
-  id: string
+  id: number
   keyMoment: string,
   avatar: string
 }
 
 export interface Actions {
   type: string,
-  payload: string
+  payload: any
 }
