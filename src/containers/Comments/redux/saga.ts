@@ -13,14 +13,18 @@ function* fetchWatcher(){
 
 function *fetchData() {
   try{
-    const { data, status } = yield call(get, "/data");
+    const resp = yield call(get, "/data");
 
     //can be regex but as fat as i know json-server will return 200
     //i use hack :)
-    if(status !== 200) {
+    if (!resp) {
+      return yield put(fail("Network Error"))
+    }
+    if(resp.status !== 200) {
       yield put(fail("Cant fetch data from server.."))
     }
-    yield put(success(data))
+
+    yield put(success(resp.data))
   }catch (e) {
     console.error(e);
     yield put(fail(e.message))

@@ -54,8 +54,8 @@ export default class KeyMoments extends Component <IProps, IState> {
         <View
           style={[styles.titleContainer, show ? {marginBottom: mediumGap} : null]}>
           <Text style={styles.text}>Key Moments</Text>
-          <TouchableOpacity onPress={this.handleOpen} style={styles.arrow}>
-            <Icon name={!show ? "ios-arrow-up" : "ios-arrow-down"} size={25} color="#757575"/>
+          <TouchableOpacity onPress={this.handleOpen} >
+            <Icon name={!show ? "ios-arrow-up" : "ios-arrow-down"} size={30} color="#757575"/>
           </TouchableOpacity>
         </View>
         <View style={styles.keyMoments}>
@@ -78,14 +78,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     zIndex: 1
   },
-  arrow: {
-    height: 30,
-    width: 30,
-    backgroundColor: "#E0E0E0",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 20
-  },
   text: {
     fontSize: mediumGap,
     fontWeight: "bold",
@@ -100,7 +92,7 @@ const styles = StyleSheet.create({
   keyMoments: {
     width: "100%",
     justifyContent: "flex-start",
-    marginLeft: smallGap
+    marginLeft: smallGap,
   }
 });
 

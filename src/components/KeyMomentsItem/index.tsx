@@ -1,6 +1,6 @@
 import React from "react"
 import {View, Image, Text, StyleSheet, TouchableOpacity} from "react-native"
-import {largeGap, mediumGap, smallGap} from "../../constants";
+import {largeGap, mediumGap} from "../../constants";
 
 export interface KmomentsData {
   id: number
