@@ -14,7 +14,7 @@ To be able to run application:
 ### How it looks?
 
 
-<img src="./assets/livecommentery.gif" alt="drawing" style="width:300px;"/>
+<img src="./assets/livecommentery.gif" alt="drawing" style="width:200px;"/>
 
 
 ### Used Dependencies
