@@ -13,7 +13,7 @@ describe("KeyMomentsItem", () => {
     wrapper = shallow(<KeyMomentsItem
       avatar="https://api.adorable.io/avatars/285/2"
       keyMoment="Key Moment"
-      id="1"
+      id={1}
       callback={onPressEvent}
     />)});
   it("should match snapshot", () => {

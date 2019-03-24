@@ -60,7 +60,6 @@ class Comments extends Component<Props, IState> {
   };
   render(): React.ReactNode {
     const {isLoading, data} = this.props.comments;
-    console.log(this.props)
     const {selectedId} = this.state;
 
     if(this.props.comments.error) {

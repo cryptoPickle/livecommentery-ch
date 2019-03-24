@@ -3,7 +3,7 @@
 exports[`KeyMomentsItem should match snapshot 1`] = `
 <TouchableOpacity
   activeOpacity={0.2}
-  onPress={[MockFunction]}
+  onPress={[Function]}
   style={
     Object {
       "alignItems": "center",
